@@ -1,547 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Shruthi Lakshmegowda | Finance & Analytics Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #007baf;
-      --accent: #2ec4b6;
-      --bg: #fff;
-      --text: #212529;
-      --section-bg: #f6f8fa;
-      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --bg: #232533;
+      --card-bg: #292b3d;
+      --text: #fff;
+      --subtext: #b2b6c8;
+      --accent: #ffc857;
+      --accent-dark: #ffb300;
+      --btn-bg: #ffc857;
+      --btn-txt: #232533;
+      --shadow: 0 4px 28px 0 rgba(0,0,0,0.12);
+      --radius: 18px;
     }
-    html {
+    html, body {
+      margin: 0; padding: 0; font-family: 'Open Sans', Arial, sans-serif; background: var(--bg); color: var(--text);
       scroll-behavior: smooth;
     }
-    body {
-      font-family: 'Poppins', 'Lato', 'Open Sans', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.7;
-    }
-    header {
-      background: var(--bg);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+    body { font-size: 1.08rem; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-dark);}
+    /* Navbar */
     .navbar {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 1.2rem 2rem;
     }
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 1px;
-      text-decoration: none;
+    .nav-brand {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2rem; font-weight: 700; letter-spacing: 1px;
+      color: var(--accent);
     }
-    .navbar nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .navbar nav a:hover {
-      color: var(--primary);
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 90vh;
-      padding: 3rem 1rem 2rem 1rem;
-      background: var(--section-bg);
-      text-align: center;
+    .nav-links a {
+      font-weight: 600; color: var(--subtext); margin-left: 2.2rem; font-size: 1rem; letter-spacing: 0.03em;
       position: relative;
-      overflow: hidden;
     }
-    .hero .profile-pic {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--primary);
-      margin-bottom: 1.5rem;
-      background: #eee;
+    .nav-links a:after {
+      content: ""; display: block; margin: 0 auto; height: 2px; width: 0%; background: var(--accent); transition: width 0.2s;
     }
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin: 0.3rem 0 0.5rem 0;
-      letter-spacing: 2px;
+    .nav-links a:hover:after { width: 80%; }
+    /* Hero */
+    .hero {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 2rem 2rem;
+      min-height: 70vh;
     }
-    .hero h2 {
-      font-size: 1.15rem;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 1.1rem;
+    .hero-text {
+      flex: 1 1 340px; min-width: 300px; max-width: 600px;
     }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
-      font-size: 1.05rem;
-      color: #48505d;
+    .hero-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.7rem; font-weight: 700; margin: 0 0 0.7rem 0; letter-spacing: 2px;
     }
-    .hero .cta-btn {
-      padding: 0.85rem 2.5rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: background 0.2s, transform 0.2s;
-      margin-top: 1rem;
+    .hero-headline {
+      color: var(--accent);
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 0.7px;
     }
-    .hero .cta-btn:hover {
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      transform: translateY(-2px) scale(1.05);
+    .hero-bio { color: var(--subtext); margin-bottom: 1.6rem; }
+    .hero-btn {
+      background: var(--btn-bg); color: var(--btn-txt); border: none; border-radius: 26px; padding: 1rem 2.6rem;
+      font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s, color 0.2s;
     }
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
+    .hero-btn:hover { background: var(--accent-dark); color: var(--bg);}
+    .hero-social { margin-top: 2.1rem; }
+    .hero-social a { color: var(--subtext); font-size: 1.4rem; margin-right: 1.1rem;}
+    .hero-img { flex: 0 0 260px; display: flex; justify-content: center; align-items: center;}
+    .hero-img img {
+      width: 210px; height: 210px; object-fit: cover; border-radius: 50%; border: 7px solid var(--accent);
+      background: #292b3d;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
     }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 1.7rem;
-      text-align: center;
-    }
+    /* Sections */
+    section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+    .section-title { color: var(--accent); font-size: 1.7rem; font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2rem;}
+    /* About */
     .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
+      display: flex; flex-wrap: wrap; gap: 2.2rem;
+      align-items: flex-start;
     }
-    .about-img {
-      flex: 0 0 160px;
-      text-align: center;
+    .about-info { flex: 1 1 320px; min-width: 250px; }
+    .about-cards {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.3rem; margin-top: 1.7rem;
     }
-    .about-img img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      background: #eee;
+    .about-card {
+      background: var(--card-bg); border-radius: var(--radius); padding: 1.2rem 1rem; color: var(--subtext);
+      font-size: 1rem; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; align-items: flex-start;
     }
-    .about-text {
-      flex: 1 1 320px;
-      min-width: 240px;
-    }
-    .edu-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.2rem 0 0 0;
-    }
-    .edu-list li {
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-    }
-    .edu-list span {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-    .skill-category {
-      background: var(--section-bg);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 1.3rem 1.1rem 1.1rem 1.1rem;
-    }
-    .skill-category h4 {
-      color: var(--primary);
-      font-size: 1.05rem;
-      margin-bottom: 0.55rem;
-      font-weight: 700;
-    }
-    .skill-category ul {
-      padding-left: 1.1rem;
-      margin: 0;
-    }
-    .skill-category li {
-      margin-bottom: 0.35rem;
-      font-size: 0.99rem;
-    }
+    .about-card span { color: var(--accent); font-weight: 700; font-size: 1.12rem; margin-bottom: 0.3rem; }
+    /* Stats */
+    .stats-row { display: flex; gap: 2.5rem; margin: 2.5rem 0 1.5rem 0;}
+    .stat { color: var(--accent); font-size: 2rem; font-weight: 700; }
+    .stat-label { color: var(--subtext); font-size: 1rem; font-weight: 500; }
+    /* Services */
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.4rem;
-      margin-top: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.1rem;
     }
     .service-card {
-      background: var(--bg);
-      border: 1px solid #e2e6ea;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 1.4rem 1.1rem 1.1rem 1.1rem;
-      transition: transform 0.15s;
+      background: var(--card-bg); border-radius: var(--radius); padding: 2.1rem 1.3rem 1.4rem 1.3rem; box-shadow: var(--shadow); color: var(--text);
+      min-height: 170px;
+      display: flex; flex-direction: column; align-items: flex-start;
+      border-left: 7px solid var(--accent);
     }
-    .service-card:hover {
-      transform: translateY(-4px) scale(1.025);
-      border-color: var(--primary);
-    }
-    .service-card h5 {
-      color: var(--primary);
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
-      font-weight: 700;
-    }
-    .service-card p {
-      color: #444;
-      font-size: 1rem;
-      margin: 0;
-    }
+    .service-card h4 { margin: 0 0 0.7rem 0; color: var(--accent); font-size: 1.11rem; font-weight: 700;}
+    /* Portfolio */
     .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.2rem;
     }
-    .project-card {
-      background: var(--section-bg);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.15s;
-      border: 1px solid #e2e6ea;
+    .portfolio-card {
+      background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.3rem 1rem;
+      display: flex; flex-direction: column; gap: 0.7rem;
     }
-    .project-card:hover {
-      transform: translateY(-3px) scale(1.015);
-      border-color: var(--primary);
+    .portfolio-thumb {
+      width: 100%; height: 150px; border-radius: 12px; object-fit: cover; background: #15151e;
+      margin-bottom: 1rem;
     }
-    .project-thumb {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      background: #dbeff7;
+    .portfolio-title { color: var(--accent); font-size: 1.08rem; font-weight: 700;}
+    .portfolio-desc { color: var(--subtext);}
+    .portfolio-tools { font-size: 0.98rem; color: #9fd7f8; margin-top: 0.2rem;}
+    /* Contact */
+    .contact-content { display: flex; flex-wrap: wrap; gap: 2.2rem; align-items: flex-start;}
+    .contact-info { flex: 1 1 230px; min-width: 220px; color: var(--subtext);}
+    .contact-info b { color: var(--accent);}
+    .contact-form { flex: 1 1 320px; min-width: 240px; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.8rem 1.2rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 1.1rem;}
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.8rem 0.7rem; border-radius: 6px; border: 1px solid #4a4c5c; font-size: 1rem; background: #26273a; color: var(--text); margin-bottom: 0.1rem;
     }
-    .project-content {
-      padding: 1.1rem;
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    .project-title {
-      font-size: 1.07rem;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .project-desc {
-      font-size: 0.98rem;
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-    .project-tools {
-      font-size: 0.92rem;
-      color: #59718a;
-      margin-top: auto;
-    }
-    .contact-info {
-      margin-bottom: 2rem;
-      text-align: center;
-      font-size: 1.01rem;
-    }
-    .contact-info a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 0.2em;
-    }
-    .contact-form {
-      max-width: 440px;
-      background: var(--section-bg);
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 2rem 1.2rem 1.2rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.85rem 0.7rem;
-      border-radius: 6px;
-      border: 1px solid #d7e1ed;
-      font-size: 1rem;
-      font-family: inherit;
-      background: #fff;
-      margin-bottom: 0.15rem;
-    }
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 90px;
-      max-height: 220px;
-    }
+    .contact-form textarea { min-height: 90px; max-height: 220px; resize: vertical;}
     .contact-form button {
-      align-self: flex-end;
-      padding: 0.7rem 2.1rem;
-      border-radius: 30px;
-      border: none;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 0.2rem;
-      transition: background 0.2s, transform 0.2s;
+      align-self: flex-end; padding: 0.65rem 1.7rem; border-radius: 30px; border: none; background: var(--btn-bg); color: var(--btn-txt); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 0.2rem; transition: background 0.2s, color 0.2s;
     }
-    .contact-form button:hover {
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      transform: translateY(-2px) scale(1.04);
-    }
-    .form-success {
-      color: var(--accent);
-      text-align: right;
-      font-size: 0.98rem;
-      margin-top: -0.6rem;
-      margin-bottom: 0.6rem;
-    }
+    .contact-form button:hover { background: var(--accent-dark); color: var(--bg);}
+    .form-success { color: var(--accent); text-align: right; font-size: 0.98rem; margin-top: -0.6rem; margin-bottom: 0.6rem;}
     /* Responsive */
-    @media (max-width: 800px) {
-      .about-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      section {
-        padding: 2rem 0.9rem;
-      }
-      .skills-grid, .services-grid, .portfolio-grid {
-        gap: 1rem;
-      }
-      .hero h1 { font-size: 2rem; }
+    @media (max-width: 900px) {
+      .hero, .about-content, .contact-content { flex-direction: column; align-items: flex-start; gap: 2.5rem;}
+      .hero-img { margin-top: 2rem;}
+      .about-cards { grid-template-columns: 1fr 1fr; }
+      .stats-row { flex-direction: column; gap: 1.1rem;}
     }
-    @media (max-width: 540px) {
-      .navbar {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0.9rem 0.7rem;
-      }
-      .hero h1 { font-size: 1.25rem; }
-      .section-title { font-size: 1.2rem; }
-      .about-img, .about-img img { width: 100px; height: 100px; }
+    @media (max-width: 600px) {
+      .navbar, .hero, section { padding: 1.1rem 0.7rem;}
+      .hero-title { font-size: 1.6rem;}
+      .about-cards { grid-template-columns: 1fr;}
     }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <div class="navbar">
-      <a href="#" class="logo">Shruthi Lakshmegowda</a>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-brand">Shruthi</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
-
+  </div>
   <!-- Hero Section -->
-  <section class="hero">
-    <img src="https://avatars.githubusercontent.com/u/153511968?v=4" alt="Shruthi Lakshmegowda Profile Picture" class="profile-pic">
-    <h1>Shruthi Lakshmegowda</h1>
-    <h2>Finance & Analytics Professional | Master’s in Business Analytics & AI | Bridging Business and Data</h2>
-    <p>
-      I’m Shruthi Lakshmegowda, a results-driven finance and analytics professional with a rare blend of deep commerce expertise and advanced analytical skills. Starting my journey as a Chartered Accountant aspirant with The Institute of Chartered Accountants of India, where I cleared the CA Foundation, I built a strong foundation in business, finance, and accounting. Currently, I’m pursuing my Master’s in Business Analytics & AI at The University of Texas at Dallas, specializing in transforming complex data into strategic business decisions. With experience as a Support Analyst and Analytical Intern, I bridge the gap between financial insight and data science to help organizations make smarter, faster decisions.
-    </p>
-    <button class="cta-btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
-      View My Work
-    </button>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="section-title">About Me</div>
-    <div class="about-content">
-      <div class="about-img">
-        <img src="https://avatars.githubusercontent.com/u/153511968?v=4" alt="Shruthi Lakshmegowda">
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="hero-title">Shruthi Lakshmegowda</div>
+      <div class="hero-headline">Finance & Analytics Professional | Master’s in Business Analytics & AI</div>
+      <div class="hero-bio">
+        I’m Shruthi Lakshmegowda, a results-driven finance and analytics professional with a rare blend of deep commerce expertise and advanced analytical skills. Starting my journey as a Chartered Accountant aspirant, I cleared the CA Foundation and built a strong foundation in business, finance, and accounting. Now, I’m pursuing my Master’s in Business Analytics & AI at The University of Texas at Dallas, specializing in transforming complex data into strategic business decisions. With experience as a Support Analyst and Analytical Intern, I bridge the gap between financial insight and data science to help organizations make smarter, faster decisions.
       </div>
-      <div class="about-text">
-        <p>
-          <b>Location:</b> Richardson, Texas, 75080<br>
-          <b>Email:</b> <a href="mailto:shruthigowda5646@gmail.com">shruthigowda5646@gmail.com</a><br>
-          <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank">shruthilakshmegowda</a>
-        </p>
-        <h4>Education</h4>
-        <ul class="edu-list">
-          <li>
-            <span>The University of Texas at Dallas</span> – Master of Science in Business Analytics & AI (Dean’s Excellence Scholarship), May 2026
-          </li>
-          <li>
-            <span>Bengaluru Central University</span> – Bachelor of Commerce in Business & Accounting, May 2022
-          </li>
-          <li>
-            <span>The Institute of Chartered Accountants of India</span> – Cleared CA Foundation
-          </li>
-        </ul>
+      <button class="hero-btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View My Work</button>
+      <div class="hero-social" style="margin-top:1.2rem;">
+        <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank" title="LinkedIn"><svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#292b3d"/><path d="M16 19h4v14h-4V19zm2-2a2 2 0 110-4 2 2 0 010 4zm6 2h4v2h.06c.55-1.04 1.9-2.14 3.94-2.14C34.42 17 36 18.62 36 21.57V33h-4V22.65c0-2.03-.74-3.04-2.29-3.04-1.23 0-1.96.83-2.29 1.61-.12.28-.15.67-.15 1.06V33h-4V19z" fill="#ffc857"/></svg></a>
+        <a href="mailto:shruthigowda5646@gmail.com" title="Email"><svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#292b3d"/><path d="M12 16h24v16H12V16zm2 2v12h20V18l-10 7-10-7z" fill="#ffc857"/></svg></a>
       </div>
     </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="section-title">Skills</div>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>Data Analytics & Programming</h4>
-        <ul>
-          <li>SQL, Python (Pandas), R, PL/SQL, Excel (VLOOKUP, Pivot Tables, Power Query)</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Visualization & Reporting</h4>
-        <ul>
-          <li>Tableau, Power BI, Microsoft Access, PowerPoint</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Data Management</h4>
-        <ul>
-          <li>Data Cleaning, Centralization, Modeling, Snowflake</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Statistical Techniques</h4>
-        <ul>
-          <li>A/B Testing, Regression, Forecasting, Hypothesis Testing</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Accounting & Auditing (CA Foundation Background)</h4>
-        <ul>
-          <li>Financial Accounting, Taxation Basics, Auditing Principles, Financial Statement Analysis, Cost Accounting, Corporate Law Fundamentals</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Financial Tools</h4>
-        <ul>
-          <li>Budgeting, Forecasting, Financial Reporting, Variance Analysis, Tally ERP 9</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Tools & Platforms</h4>
-        <ul>
-          <li>Adobe Photoshop, Zoho CRM, MS Word, Outlook</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Soft Skills</h4>
-        <ul>
-          <li>Communication, Analytical Thinking, Collaboration, Problem Solving</li>
-        </ul>
-      </div>
+    <div class="hero-img">
+      <img src="https://avatars.githubusercontent.com/u/153511968?v=4" alt="Shruthi Lakshmegowda">
     </div>
   </section>
-
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services">
     <div class="section-title">Services</div>
     <div class="services-grid">
       <div class="service-card">
-        <h5>Data Analytics & Insights</h5>
+        <h4>Data Analytics & Insights</h4>
         <p>Clean, analyze, and interpret data to uncover trends and opportunities.</p>
       </div>
       <div class="service-card">
-        <h5>Financial Analysis & Forecasting</h5>
+        <h4>Financial Analysis & Forecasting</h4>
         <p>Create budgets, forecasts, and variance reports for strategic decisions.</p>
       </div>
       <div class="service-card">
-        <h5>Dashboard Design & Visualization</h5>
+        <h4>Dashboard Design & Visualization</h4>
         <p>Build interactive dashboards with Tableau, Power BI, and Excel.</p>
       </div>
       <div class="service-card">
-        <h5>Business Process Optimization</h5>
+        <h4>Business Process Optimization</h4>
         <p>Streamline workflows to save time and improve accuracy.</p>
       </div>
       <div class="service-card">
-        <h5>Data Management & Quality Assurance</h5>
+        <h4>Data Management & Quality Assurance</h4>
         <p>Maintain high-quality, centralized, and consistent data.</p>
       </div>
     </div>
   </section>
-
-  <!-- Portfolio Section -->
+  <!-- Portfolio -->
   <section id="portfolio">
     <div class="section-title">Portfolio</div>
     <div class="portfolio-grid">
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Deloitte Australia Simulation" class="project-thumb">
-        <div class="project-content">
-          <div class="project-title">Deloitte Australia – Data Analytics Job Simulation (Forage, Aug 2025)</div>
-          <div class="project-desc">Tableau dashboard, Excel classification, anomaly detection.</div>
-          <div class="project-tools">Tools: Tableau, Excel</div>
-        </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Deloitte Australia Simulation" class="portfolio-thumb">
+        <div class="portfolio-title">Deloitte Australia – Data Analytics Job Simulation (Forage, Aug 2025)</div>
+        <div class="portfolio-desc">Tableau dashboard, Excel classification, anomaly detection.</div>
+        <div class="portfolio-tools">Tableau, Excel</div>
       </div>
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Bike Share Ride Project" class="project-thumb">
-        <div class="project-content">
-          <div class="project-title">Bike Share Ride Project – Business Analytics with R (Aug–Dec 2024)</div>
-          <div class="project-desc">Logistic regression on weather-related usage; found wind speed reduces usage by 28.1%.</div>
-          <div class="project-tools">Tools: R</div>
-        </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Bike Share Ride Project" class="portfolio-thumb">
+        <div class="portfolio-title">Bike Share Ride Project – Business Analytics with R (Aug–Dec 2024)</div>
+        <div class="portfolio-desc">Logistic regression on weather-related usage; found wind speed reduces usage by 28.1%.</div>
+        <div class="portfolio-tools">R</div>
       </div>
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="COVID-19 Socioeconomic Analysis" class="project-thumb">
-        <div class="project-content">
-          <div class="project-title">COVID-19 Socioeconomic Analysis – Data Visualization (Aug–Dec 2024)</div>
-          <div class="project-desc">Tableau dashboards on 167,000+ records; team collaboration for data cleaning.</div>
-          <div class="project-tools">Tools: Tableau, Excel</div>
-        </div>
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="COVID-19 Socioeconomic Analysis" class="portfolio-thumb">
+        <div class="portfolio-title">COVID-19 Socioeconomic Analysis – Data Visualization (Aug–Dec 2024)</div>
+        <div class="portfolio-desc">Tableau dashboards on 167,000+ records; team collaboration for data cleaning.</div>
+        <div class="portfolio-tools">Tableau, Excel</div>
       </div>
     </div>
   </section>
-
-  <!-- Contact Section -->
+  <!-- About -->
+  <section id="about">
+    <div class="section-title">About Me</div>
+    <div class="about-content">
+      <div class="about-info">
+        <b>Location:</b> Richardson, Texas, 75080<br>
+        <b>Email:</b> <a href="mailto:shruthigowda5646@gmail.com">shruthigowda5646@gmail.com</a><br>
+        <b>Phone:</b> <a href="tel:2148992342">(214) 899-2342</a><br>
+        <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank">shruthilakshmegowda</a>
+        <div class="about-cards">
+          <div class="about-card">
+            <span>Education</span>
+            The University of Texas at Dallas – MS Business Analytics & AI (Dean’s Excellence Scholarship), May 2026<br>
+            Bengaluru Central University – Bachelor of Commerce, May 2022<br>
+            ICAI – Cleared CA Foundation
+          </div>
+          <div class="about-card">
+            <span>Experience</span>
+            Support Analyst, Analytical Intern, Data-driven decision making, Financial analysis
+          </div>
+          <div class="about-card">
+            <span>Soft Skills</span>
+            Communication, Analytical Thinking, Collaboration, Problem Solving
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div>
+        <div class="stat">7+</div>
+        <div class="stat-label">Years of Commerce & Analytics</div>
+      </div>
+      <div>
+        <div class="stat">12+</div>
+        <div class="stat-label">Major Projects</div>
+      </div>
+      <div>
+        <div class="stat">6</div>
+        <div class="stat-label">Data Tools Mastered</div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
   <section id="contact">
     <div class="section-title">Contact</div>
-    <div class="contact-info">
-      <div><b>Location:</b> Richardson, Texas, 75080</div>
-      <div><b>Email:</b> <a href="mailto:shruthigowda5646@gmail.com">shruthigowda5646@gmail.com</a></div>
-      <div><b>Phone:</b> <a href="tel:2148992342">(214) 899-2342</a></div>
-      <div><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank">shruthilakshmegowda</a></div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <b>Let’s work together!</b><br>
+        Richardson, Texas, 75080<br>
+        Email: <a href="mailto:shruthigowda5646@gmail.com">shruthigowda5646@gmail.com</a><br>
+        Phone: <a href="tel:2148992342">(214) 899-2342</a><br>
+        LinkedIn: <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank">shruthilakshmegowda</a>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/mwkgrbqp" method="POST" onsubmit="formSuccess(event)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div id="form-success" class="form-success" style="display:none;">Thank you! Your message was sent.</div>
+      </form>
     </div>
-    <form class="contact-form" action="https://formspree.io/f/mwkgrbqp" method="POST" onsubmit="formSuccess(event)">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <div id="form-success" class="form-success" style="display:none;">Thank you! Your message was sent.</div>
-    </form>
   </section>
-
   <script>
     // Show form success message
     function formSuccess(e) {
@@ -551,7 +300,7 @@
         document.getElementById("form-success").style.display = "none";
       }, 4000);
       e.target.reset();
-      // Remove this and uncomment below for real submissions
+      // For demo only, remove above and uncomment below for real submission
       // e.target.submit();
     }
   </script>
