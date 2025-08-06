@@ -1,261 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Shruthi Lakshmegowda | Finance & Analytics Professional</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>Shruthi Lakshmegowda | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #232533;
-      --card-bg: #292b3d;
+      --bg: #191b26;
+      --sidebar: #202233;
+      --sidebar-hover: #23253a;
+      --card: #23253a;
       --text: #fff;
       --subtext: #b2b6c8;
-      --accent: #ffc857;
-      --accent-dark: #ffb300;
-      --btn-bg: #ffc857;
-      --btn-txt: #232533;
-      --shadow: 0 4px 28px 0 rgba(0,0,0,0.12);
+      --accent: #ffb300;
+      --accent2: #00c9c8;
       --radius: 18px;
+      --shadow: 0 8px 32px 0 rgba(0,0,0,0.19);
     }
-    html, body {
-      margin: 0; padding: 0; font-family: 'Open Sans', Arial, sans-serif; background: var(--bg); color: var(--text);
-      scroll-behavior: smooth;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: row;
     }
-    body { font-size: 1.08rem; line-height: 1.7; }
-    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--accent-dark);}
-    /* Navbar */
-    .navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 1.2rem 2rem;
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 240px;
+      min-width: 200px;
+      background: var(--sidebar);
+      padding: 2rem 1.5rem 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      height: 100vh;
+      top: 0; left: 0; bottom: 0;
+      z-index: 10;
+      box-shadow: var(--shadow);
     }
-    .nav-brand {
+    .sidebar .logo {
       font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2rem; font-weight: 700; letter-spacing: 1px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+    }
+    .sidebar nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      margin-top: 1.1rem;
+      margin-bottom: auto;
+    }
+    .sidebar nav a {
+      color: var(--subtext);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: background 0.18s, color 0.18s;
+      display: flex; align-items: center; gap: 0.7em;
+    }
+    .sidebar nav a.active,
+    .sidebar nav a:hover {
+      background: var(--sidebar-hover);
       color: var(--accent);
     }
-    .nav-links a {
-      font-weight: 600; color: var(--subtext); margin-left: 2.2rem; font-size: 1rem; letter-spacing: 0.03em;
-      position: relative;
+    .sidebar .social {
+      margin-top: 2.2rem;
+      display: flex; gap: 1.1rem;
     }
-    .nav-links a:after {
-      content: ""; display: block; margin: 0 auto; height: 2px; width: 0%; background: var(--accent); transition: width 0.2s;
+    .sidebar .social a {
+      color: var(--accent);
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .nav-links a:hover:after { width: 80%; }
-    /* Hero */
+    .sidebar .social a:hover { color: var(--accent2);}
+    /* Main Content */
+    .main {
+      margin-left: 240px;
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 2rem 2rem 2rem;
+    }
+    @media (max-width: 900px) {
+      .sidebar { position: static; width: 100vw; height: auto; flex-direction: row; align-items: center; padding: 0.7rem 1rem;}
+      .sidebar .logo { margin-bottom: 0; }
+      .sidebar nav { flex-direction: row; gap: 0.7rem; margin: 0 0 0 2rem;}
+      .sidebar .social { margin-top: 0; margin-left:auto;}
+      .main { margin-left: 0; padding: 1.2rem 0.7rem;}
+    }
+    /* Hero Section */
     .hero {
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 2rem 2rem;
-      min-height: 70vh;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      padding-top: 4.5rem;
+      padding-bottom: 2.5rem;
     }
-    .hero-text {
-      flex: 1 1 340px; min-width: 300px; max-width: 600px;
+    .hero-img {
+      flex: 0 0 240px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-img img {
+      width: 200px; height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--accent);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.17);
+      background: #23253a;
+    }
+    .hero-info {
+      flex: 1 1 340px;
+      min-width: 260px;
     }
     .hero-title {
       font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2.7rem; font-weight: 700; margin: 0 0 0.7rem 0; letter-spacing: 2px;
+      font-size: 2.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
     }
     .hero-headline {
-      color: var(--accent);
-      font-size: 1.15rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: 0.7px;
+      font-size: 1.17rem;
+      color: var(--accent2);
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.7px;
     }
-    .hero-bio { color: var(--subtext); margin-bottom: 1.6rem; }
+    .hero-bio {
+      color: var(--subtext);
+      line-height: 1.7;
+      margin-bottom: 1.3rem;
+      max-width: 600px;
+    }
     .hero-btn {
-      background: var(--btn-bg); color: var(--btn-txt); border: none; border-radius: 26px; padding: 1rem 2.6rem;
-      font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: var(--shadow); transition: background 0.2s, color 0.2s;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #1a1a1a;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 1rem 2.6rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s, transform 0.14s;
     }
-    .hero-btn:hover { background: var(--accent-dark); color: var(--bg);}
-    .hero-social { margin-top: 2.1rem; }
-    .hero-social a { color: var(--subtext); font-size: 1.4rem; margin-right: 1.1rem;}
-    .hero-img { flex: 0 0 260px; display: flex; justify-content: center; align-items: center;}
-    .hero-img img {
-      width: 210px; height: 210px; object-fit: cover; border-radius: 50%; border: 7px solid var(--accent);
-      background: #292b3d;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+    .hero-btn:hover {
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      color: var(--text);
+      transform: scale(1.03);
     }
-    /* Sections */
-    section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
-    .section-title { color: var(--accent); font-size: 1.7rem; font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2rem;}
-    /* About */
-    .about-content {
-      display: flex; flex-wrap: wrap; gap: 2.2rem;
+    /* Section titles */
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--accent2);
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      margin: 3.3rem 0 2.2rem 0;
+      letter-spacing: 1px;
+    }
+    /* Services Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.7rem;
+      margin-bottom: 2.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.1rem 1.1rem 1.2rem 1.1rem;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
       align-items: flex-start;
+      min-height: 160px;
+      border-left: 6px solid var(--accent2);
+      transition: border 0.18s;
     }
-    .about-info { flex: 1 1 320px; min-width: 250px; }
-    .about-cards {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.3rem; margin-top: 1.7rem;
+    .card:hover { border-left: 6px solid var(--accent);}
+    .card h3 {
+      margin: 0 0 0.7rem 0;
+      color: var(--accent2);
+      font-size: 1.13rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
-    .about-card {
-      background: var(--card-bg); border-radius: var(--radius); padding: 1.2rem 1rem; color: var(--subtext);
-      font-size: 1rem; box-shadow: var(--shadow);
-      display: flex; flex-direction: column; align-items: flex-start;
-    }
-    .about-card span { color: var(--accent); font-weight: 700; font-size: 1.12rem; margin-bottom: 0.3rem; }
-    /* Stats */
-    .stats-row { display: flex; gap: 2.5rem; margin: 2.5rem 0 1.5rem 0;}
-    .stat { color: var(--accent); font-size: 2rem; font-weight: 700; }
-    .stat-label { color: var(--subtext); font-size: 1rem; font-weight: 500; }
-    /* Services */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.1rem;
-    }
-    .service-card {
-      background: var(--card-bg); border-radius: var(--radius); padding: 2.1rem 1.3rem 1.4rem 1.3rem; box-shadow: var(--shadow); color: var(--text);
-      min-height: 170px;
-      display: flex; flex-direction: column; align-items: flex-start;
-      border-left: 7px solid var(--accent);
-    }
-    .service-card h4 { margin: 0 0 0.7rem 0; color: var(--accent); font-size: 1.11rem; font-weight: 700;}
-    /* Portfolio */
+    .card p { margin: 0; color: var(--subtext);}
+    /* Portfolio Grid */
     .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.5rem;
     }
     .portfolio-card {
-      background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.3rem 1rem;
-      display: flex; flex-direction: column; gap: 0.7rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s, border 0.15s;
+      border-bottom: 4px solid var(--accent2);
     }
+    .portfolio-card:hover { transform: translateY(-3px) scale(1.025); border-bottom: 4px solid var(--accent);}
     .portfolio-thumb {
-      width: 100%; height: 150px; border-radius: 12px; object-fit: cover; background: #15151e;
-      margin-bottom: 1rem;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      background: #15151e;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
     }
-    .portfolio-title { color: var(--accent); font-size: 1.08rem; font-weight: 700;}
-    .portfolio-desc { color: var(--subtext);}
-    .portfolio-tools { font-size: 0.98rem; color: #9fd7f8; margin-top: 0.2rem;}
+    .portfolio-content {
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex: 1 1 auto;
+    }
+    .portfolio-title {
+      font-size: 1.01rem;
+      color: var(--accent2);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .portfolio-desc {
+      font-size: 0.98rem;
+      color: var(--subtext);
+      margin-bottom: 0.3rem;
+    }
+    .portfolio-tools {
+      font-size: 0.93rem;
+      color: var(--accent);
+      margin-top: auto;
+    }
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      gap: 2.5rem;
+      margin: 2.5rem 0 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .stat {
+      color: var(--accent2);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .stat-label {
+      color: var(--subtext);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 2.8rem;
+    }
+    .skill-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.3rem 1rem;
+    }
+    .skill-card h4 {
+      color: var(--accent);
+      font-size: 1.04rem;
+      margin-bottom: 0.45rem;
+      font-weight: 700;
+    }
+    .skill-card ul {
+      margin: 0; padding-left: 1.1rem;
+    }
+    .skill-card li {
+      font-size: 0.98rem;
+      color: var(--subtext);
+      margin-bottom: 0.3rem;
+    }
     /* Contact */
-    .contact-content { display: flex; flex-wrap: wrap; gap: 2.2rem; align-items: flex-start;}
-    .contact-info { flex: 1 1 230px; min-width: 220px; color: var(--subtext);}
-    .contact-info b { color: var(--accent);}
-    .contact-form { flex: 1 1 320px; min-width: 240px; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.8rem 1.2rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 1.1rem;}
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 0.8rem 0.7rem; border-radius: 6px; border: 1px solid #4a4c5c; font-size: 1rem; background: #26273a; color: var(--text); margin-bottom: 0.1rem;
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+    .contact-info {
+      flex: 1 1 220px;
+      min-width: 180px;
+      color: var(--subtext);
+      font-size: 1.03rem;
+    }
+    .contact-info b {
+      color: var(--accent2);
+    }
+    .contact-form {
+      flex: 1 1 320px; min-width: 220px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.8rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #393b4d;
+      font-size: 1rem;
+      background: #23253a;
+      color: var(--text);
+      margin-bottom: 0.1rem;
     }
     .contact-form textarea { min-height: 90px; max-height: 220px; resize: vertical;}
     .contact-form button {
-      align-self: flex-end; padding: 0.65rem 1.7rem; border-radius: 30px; border: none; background: var(--btn-bg); color: var(--btn-txt); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 0.2rem; transition: background 0.2s, color 0.2s;
+      align-self: flex-end;
+      padding: 0.65rem 1.7rem;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #232533;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.2rem;
+      transition: background 0.2s, color 0.2s;
     }
-    .contact-form button:hover { background: var(--accent-dark); color: var(--bg);}
-    .form-success { color: var(--accent); text-align: right; font-size: 0.98rem; margin-top: -0.6rem; margin-bottom: 0.6rem;}
+    .contact-form button:hover {
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      color: var(--text);
+    }
+    .form-success {
+      color: var(--accent2);
+      text-align: right;
+      font-size: 0.98rem;
+      margin-top: -0.6rem;
+      margin-bottom: 0.6rem;
+    }
     /* Responsive */
-    @media (max-width: 900px) {
-      .hero, .about-content, .contact-content { flex-direction: column; align-items: flex-start; gap: 2.5rem;}
-      .hero-img { margin-top: 2rem;}
-      .about-cards { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; align-items: flex-start;}
       .stats-row { flex-direction: column; gap: 1.1rem;}
+      .main { padding: 0.4rem 0.2rem;}
+      .sidebar { padding: 0.7rem 0.4rem;}
     }
-    @media (max-width: 600px) {
-      .navbar, .hero, section { padding: 1.1rem 0.7rem;}
-      .hero-title { font-size: 1.6rem;}
-      .about-cards { grid-template-columns: 1fr;}
+    @media (max-width: 500px) {
+      .sidebar { flex-direction: column; align-items: flex-start;}
+      .sidebar nav { flex-direction: column; gap: 0.6rem; margin: 0;}
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="nav-brand">Shruthi</div>
-    <div class="nav-links">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <a href="#" class="logo">Shruthi</a>
+    <nav>
+      <a href="#hero" class="active">Home</a>
       <a href="#services">Services</a>
-      <a href="#portfolio">Works</a>
-      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
+    </nav>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/shruthilakshmegowda" title="LinkedIn" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#23253a"/><path d="M16 19h4v14h-4V19zm2-2a2 2 0 110-4 2 2 0 010 4zm6 2h4v2h.06c.55-1.04 1.9-2.14 3.94-2.14C34.42 17 36 18.62 36 21.57V33h-4V22.65c0-2.03-.74-3.04-2.29-3.04-1.23 0-1.96.83-2.29 1.61-.12.28-.15.67-.15 1.06V33h-4V19z" fill="#ffb300"/></svg>
+      </a>
+      <a href="mailto:shruthigowda5646@gmail.com" title="Email">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#23253a"/><path d="M12 16h24v16H12V16zm2 2v12h20V18l-10 7-10-7z" fill="#00c9c8"/></svg>
+      </a>
     </div>
-  </div>
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-text">
-      <div class="hero-title">Shruthi Lakshmegowda</div>
-      <div class="hero-headline">Finance & Analytics Professional | Master’s in Business Analytics & AI</div>
-      <div class="hero-bio">
-        I’m Shruthi Lakshmegowda, a results-driven finance and analytics professional with a rare blend of deep commerce expertise and advanced analytical skills. Starting my journey as a Chartered Accountant aspirant, I cleared the CA Foundation and built a strong foundation in business, finance, and accounting. Now, I’m pursuing my Master’s in Business Analytics & AI at The University of Texas at Dallas, specializing in transforming complex data into strategic business decisions. With experience as a Support Analyst and Analytical Intern, I bridge the gap between financial insight and data science to help organizations make smarter, faster decisions.
+  </aside>
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-img">
+        <img src="https://avatars.githubusercontent.com/u/153511968?v=4" alt="Shruthi Lakshmegowda">
       </div>
-      <button class="hero-btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View My Work</button>
-      <div class="hero-social" style="margin-top:1.2rem;">
-        <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank" title="LinkedIn"><svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#292b3d"/><path d="M16 19h4v14h-4V19zm2-2a2 2 0 110-4 2 2 0 010 4zm6 2h4v2h.06c.55-1.04 1.9-2.14 3.94-2.14C34.42 17 36 18.62 36 21.57V33h-4V22.65c0-2.03-.74-3.04-2.29-3.04-1.23 0-1.96.83-2.29 1.61-.12.28-.15.67-.15 1.06V33h-4V19z" fill="#ffc857"/></svg></a>
-        <a href="mailto:shruthigowda5646@gmail.com" title="Email"><svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#292b3d"/><path d="M12 16h24v16H12V16zm2 2v12h20V18l-10 7-10-7z" fill="#ffc857"/></svg></a>
+      <div class="hero-info">
+        <div class="hero-title">Shruthi Lakshmegowda</div>
+        <div class="hero-headline">Finance & Analytics Professional | Master’s in Business Analytics & AI</div>
+        <div class="hero-bio">
+          I’m Shruthi Lakshmegowda, a results-driven finance and analytics professional with a rare blend of deep commerce expertise and advanced analytical skills. Starting my journey as a Chartered Accountant aspirant with The Institute of Chartered Accountants of India, where I cleared the CA Foundation, I built a strong foundation in business, finance, and accounting. Currently, I’m pursuing my Master’s in Business Analytics & AI at The University of Texas at Dallas, specializing in transforming complex data into strategic business decisions. With experience as a Support Analyst and Analytical Intern, I bridge the gap between financial insight and data science to help organizations make smarter, faster decisions.
+        </div>
+        <button class="hero-btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+          View My Work
+        </button>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://avatars.githubusercontent.com/u/153511968?v=4" alt="Shruthi Lakshmegowda">
-    </div>
-  </section>
-  <!-- Services -->
-  <section id="services">
-    <div class="section-title">Services</div>
-    <div class="services-grid">
-      <div class="service-card">
-        <h4>Data Analytics & Insights</h4>
+    </section>
+    <!-- Services -->
+    <div class="section-title" id="services">Services</div>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Data Analytics & Insights</h3>
         <p>Clean, analyze, and interpret data to uncover trends and opportunities.</p>
       </div>
-      <div class="service-card">
-        <h4>Financial Analysis & Forecasting</h4>
+      <div class="card">
+        <h3>Financial Analysis & Forecasting</h3>
         <p>Create budgets, forecasts, and variance reports for strategic decisions.</p>
       </div>
-      <div class="service-card">
-        <h4>Dashboard Design & Visualization</h4>
+      <div class="card">
+        <h3>Dashboard Design & Visualization</h3>
         <p>Build interactive dashboards with Tableau, Power BI, and Excel.</p>
       </div>
-      <div class="service-card">
-        <h4>Business Process Optimization</h4>
+      <div class="card">
+        <h3>Business Process Optimization</h3>
         <p>Streamline workflows to save time and improve accuracy.</p>
       </div>
-      <div class="service-card">
-        <h4>Data Management & Quality Assurance</h4>
+      <div class="card">
+        <h3>Data Management & Quality Assurance</h3>
         <p>Maintain high-quality, centralized, and consistent data.</p>
       </div>
     </div>
-  </section>
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <div class="section-title">Portfolio</div>
+    <!-- Portfolio -->
+    <div class="section-title" id="portfolio">Portfolio</div>
     <div class="portfolio-grid">
       <div class="portfolio-card">
         <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Deloitte Australia Simulation" class="portfolio-thumb">
-        <div class="portfolio-title">Deloitte Australia – Data Analytics Job Simulation (Forage, Aug 2025)</div>
-        <div class="portfolio-desc">Tableau dashboard, Excel classification, anomaly detection.</div>
-        <div class="portfolio-tools">Tableau, Excel</div>
+        <div class="portfolio-content">
+          <div class="portfolio-title">Deloitte Australia – Data Analytics Job Simulation (Forage, Aug 2025)</div>
+          <div class="portfolio-desc">Tableau dashboard, Excel classification, anomaly detection.</div>
+          <div class="portfolio-tools">Tableau, Excel</div>
+        </div>
       </div>
       <div class="portfolio-card">
         <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Bike Share Ride Project" class="portfolio-thumb">
-        <div class="portfolio-title">Bike Share Ride Project – Business Analytics with R (Aug–Dec 2024)</div>
-        <div class="portfolio-desc">Logistic regression on weather-related usage; found wind speed reduces usage by 28.1%.</div>
-        <div class="portfolio-tools">R</div>
+        <div class="portfolio-content">
+          <div class="portfolio-title">Bike Share Ride Project – Business Analytics with R (Aug–Dec 2024)</div>
+          <div class="portfolio-desc">Logistic regression on weather-related usage; found wind speed reduces usage by 28.1%.</div>
+          <div class="portfolio-tools">R</div>
+        </div>
       </div>
       <div class="portfolio-card">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="COVID-19 Socioeconomic Analysis" class="portfolio-thumb">
-        <div class="portfolio-title">COVID-19 Socioeconomic Analysis – Data Visualization (Aug–Dec 2024)</div>
-        <div class="portfolio-desc">Tableau dashboards on 167,000+ records; team collaboration for data cleaning.</div>
-        <div class="portfolio-tools">Tableau, Excel</div>
-      </div>
-    </div>
-  </section>
-  <!-- About -->
-  <section id="about">
-    <div class="section-title">About Me</div>
-    <div class="about-content">
-      <div class="about-info">
-        <b>Location:</b> Richardson, Texas, 75080<br>
-        <b>Email:</b> <a href="mailto:shruthigowda5646@gmail.com">shruthigowda5646@gmail.com</a><br>
-        <b>Phone:</b> <a href="tel:2148992342">(214) 899-2342</a><br>
-        <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shruthilakshmegowda" target="_blank">shruthilakshmegowda</a>
-        <div class="about-cards">
-          <div class="about-card">
-            <span>Education</span>
-            The University of Texas at Dallas – MS Business Analytics & AI (Dean’s Excellence Scholarship), May 2026<br>
-            Bengaluru Central University – Bachelor of Commerce, May 2022<br>
-            ICAI – Cleared CA Foundation
-          </div>
-          <div class="about-card">
-            <span>Experience</span>
-            Support Analyst, Analytical Intern, Data-driven decision making, Financial analysis
-          </div>
-          <div class="about-card">
-            <span>Soft Skills</span>
-            Communication, Analytical Thinking, Collaboration, Problem Solving
-          </div>
+        <div class="portfolio-content">
+          <div class="portfolio-title">COVID-19 Socioeconomic Analysis – Data Visualization (Aug–Dec 2024)</div>
+          <div class="portfolio-desc">Tableau dashboards on 167,000+ records; team collaboration for data cleaning.</div>
+          <div class="portfolio-tools">Tableau, Excel</div>
         </div>
       </div>
     </div>
+    <!-- Skills -->
+    <div class="section-title" id="skills">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Data Analytics & Programming</h4>
+        <ul>
+          <li>SQL, Python (Pandas), R, PL/SQL, Excel (VLOOKUP, Pivot Tables, Power Query)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Visualization & Reporting</h4>
+        <ul>
+          <li>Tableau, Power BI, Microsoft Access, PowerPoint</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Data Management</h4>
+        <ul>
+          <li>Data Cleaning, Centralization, Modeling, Snowflake</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Statistical Techniques</h4>
+        <ul>
+          <li>A/B Testing, Regression, Forecasting, Hypothesis Testing</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Accounting & Auditing (CA Foundation Background)</h4>
+        <ul>
+          <li>Financial Accounting, Taxation Basics, Auditing Principles, Financial Statement Analysis, Cost Accounting, Corporate Law Fundamentals</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Financial Tools</h4>
+        <ul>
+          <li>Budgeting, Forecasting, Financial Reporting, Variance Analysis, Tally ERP 9</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Tools & Platforms</h4>
+        <ul>
+          <li>Adobe Photoshop, Zoho CRM, MS Word, Outlook</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h4>Soft Skills</h4>
+        <ul>
+          <li>Communication, Analytical Thinking, Collaboration, Problem Solving</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Stats -->
     <div class="stats-row">
       <div>
         <div class="stat">7+</div>
@@ -270,11 +530,9 @@
         <div class="stat-label">Data Tools Mastered</div>
       </div>
     </div>
-  </section>
-  <!-- Contact -->
-  <section id="contact">
-    <div class="section-title">Contact</div>
-    <div class="contact-content">
+    <!-- Contact -->
+    <div class="section-title" id="contact">Contact</div>
+    <div class="contact-row">
       <div class="contact-info">
         <b>Let’s work together!</b><br>
         Richardson, Texas, 75080<br>
@@ -290,18 +548,30 @@
         <div id="form-success" class="form-success" style="display:none;">Thank you! Your message was sent.</div>
       </form>
     </div>
-  </section>
+  </div>
   <script>
+    // Highlight nav link on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const navLinks = document.querySelectorAll('.sidebar nav a');
+      const sections = ['hero','services','portfolio','skills','contact'].map(id=>document.getElementById(id) || document.querySelector(`[id='${id}']`));
+      window.onscroll = function() {
+        let scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+        navLinks.forEach(link => link.classList.remove('active'));
+        for(let i=sections.length-1;i>=0;i--) {
+          if(sections[i] && sections[i].offsetTop-90 <= scrollPos) {
+            navLinks[i].classList.add('active'); break;
+          }
+        }
+      };
+    });
     // Show form success message
     function formSuccess(e) {
       e.preventDefault();
       document.getElementById("form-success").style.display = "block";
       setTimeout(() => {
         document.getElementById("form-success").style.display = "none";
-      }, 4000);
+      }, 3500);
       e.target.reset();
-      // For demo only, remove above and uncomment below for real submission
-      // e.target.submit();
     }
   </script>
 </body>
