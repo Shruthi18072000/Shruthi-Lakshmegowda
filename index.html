@@ -4,15 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Shruthi Lakshmegowda | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@500;600&family=Quicksand:wght@600;700&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Unique stylish fonts for headlines and body -->
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --pastel-bg: #ffe3ed;
       --pastel-card: #fff6fa;
-      --pastel-accent: #f472b6;  /* vivid pink */
-      --pastel-accent2: #ec4899; /* deeper pink */
-      --pastel-accent3: #fbcfe8; /* lightest pink */
-      --pastel-accent4: #f9a8d4; /* mid pastel pink */
+      --pastel-accent: #f472b6;
+      --pastel-accent2: #ec4899;
+      --pastel-accent3: #fbcfe8;
+      --pastel-accent4: #f9a8d4;
       --pastel-headline1: #ec4899;
       --pastel-headline2: #e11d48;
       --pastel-headline3: #f472b6;
@@ -29,12 +30,12 @@
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Quicksand', 'DM Sans', 'Inter', Arial, sans-serif;
+      font-family: 'Nunito', Arial, sans-serif;
       background: var(--pastel-bg);
       color: var(--pastel-text-main);
       min-height: 100vh;
       scroll-behavior: smooth;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: .01em;
     }
     /* Sidebar */
@@ -58,7 +59,7 @@
       100% { background-position: 0% 100%;}
     }
     .sidebar .logo {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif;
       font-size: 2.3rem;
       font-weight: 700;
       color: var(--pastel-accent);
@@ -80,8 +81,8 @@
     }
     .sidebar nav a {
       color: var(--pastel-text-sub);
-      font-family: 'Quicksand', 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
       font-size: 1.08rem;
       text-decoration: none;
       padding: 0.65rem 1.1rem;
@@ -146,9 +147,9 @@
     .hero-img img:hover { border: 7px solid var(--pastel-accent);}
     .hero-info { flex: 1 1 410px; min-width: 260px;}
     .hero-title {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
       font-size: 2.8rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 2px;
       background: linear-gradient(90deg, var(--pastel-headline1), var(--pastel-headline2), var(--pastel-headline3));
       background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
@@ -156,7 +157,7 @@
       text-shadow: 0 2px 14px #fff2;
     }
     .hero-headline {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
       font-size: 1.22rem;
       font-weight: 700;
       background: linear-gradient(90deg, var(--pastel-headline4), var(--pastel-headline2));
@@ -167,9 +168,9 @@
     }
     .hero-bio {
       color: var(--pastel-text-sub);
-      font-family: 'DM Sans', 'Quicksand', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.08rem;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 1.12rem;
       letter-spacing: .01em;
       line-height: 1.8;
       margin-bottom: 1.35rem;
@@ -182,14 +183,14 @@
       border: none;
       border-radius: 30px;
       font-size: 1.13rem;
-      font-weight: 700;
+      font-weight: 800;
       padding: 1rem 2.7rem;
       cursor: pointer;
       margin-top: 1rem;
       box-shadow: 0 6px 32px 0 #f9a8c91a;
       transition: background .18s, color .16s, transform .12s;
       letter-spacing: 0.04em;
-      font-family: 'Quicksand', Arial, sans-serif;
+      font-family: 'Nunito', Arial, sans-serif;
     }
     .hero-btn:hover, .hero-btn:focus {
       background: var(--gradient);
@@ -198,9 +199,9 @@
     }
     /* Section titles */
     .section-title {
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
       font-size: 1.5rem;
-      font-weight: 800;
+      font-weight: 700;
       margin: 3.1rem 0 2.1rem 0;
       letter-spacing: 1px;
       background: linear-gradient(90deg, var(--pastel-headline2), var(--pastel-headline3), var(--pastel-headline1));
@@ -229,13 +230,13 @@
     .card h3 {
       margin: 0 0 0.7rem 0;
       color: var(--pastel-headline4);
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
       font-size: 1.15rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 8px #f9a8c944;
     }
-    .card p { margin: 0; color: var(--pastel-text-sub); font-family: 'DM Sans', Arial, sans-serif; font-weight: 700;}
+    .card p { margin: 0; color: var(--pastel-text-sub); font-family: 'Nunito', Arial, sans-serif; font-weight: 800;}
     /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
@@ -273,30 +274,30 @@
     .portfolio-title {
       font-size: 1.09rem;
       color: var(--pastel-headline1);
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 800;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
+      font-weight: 700;
       margin-bottom: 0.3rem;
       letter-spacing: 0.01em;
     }
     .portfolio-desc {
       font-size: 1.01rem;
       color: var(--pastel-text-sub);
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
       margin-bottom: 0.35rem;
     }
     .portfolio-tools {
       font-size: 0.98rem;
       color: var(--pastel-accent);
       margin-top: auto;
-      font-family: 'Quicksand', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
     }
     .portfolio-badge {
       display: inline-block;
       background: var(--gradient2);
       color: var(--pastel-text-main);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
       padding: 0.25em 0.7em;
       border-radius: 15px;
@@ -305,7 +306,7 @@
       letter-spacing: 0.01em;
       text-decoration: none;
       transition: background .18s, color .18s;
-      font-family: 'Quicksand', Arial, sans-serif;
+      font-family: 'Nunito', Arial, sans-serif;
     }
     .portfolio-badge:hover { background: var(--gradient); color: var(--white);}
     /* Stats */
@@ -318,14 +319,14 @@
     .stat {
       color: var(--pastel-headline4);
       font-size: 1.38rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 800;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
+      font-weight: 700;
     }
     .stat-label {
       color: var(--pastel-text-sub);
       font-size: 1.07rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
     }
     /* Skills */
     .skills-grid {
@@ -344,10 +345,10 @@
     .skill-card.visible { opacity: 1; transform: none;}
     .skill-card h4 {
       color: var(--pastel-headline3);
-      font-family: 'Montserrat', Arial, sans-serif;
+      font-family: 'Mochiy Pop P One', Arial, sans-serif !important;
       font-size: 1.04rem;
       margin-bottom: 0.45rem;
-      font-weight: 800;
+      font-weight: 700;
     }
     .skill-card ul {
       margin: 0; padding-left: 1.1rem;
@@ -356,8 +357,8 @@
       font-size: 0.98rem;
       color: var(--pastel-text-sub);
       margin-bottom: 0.3rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
     }
     /* Contact */
     .contact-row {
@@ -372,8 +373,8 @@
       min-width: 160px;
       color: var(--pastel-text-sub);
       font-size: 1.03rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
     }
     .contact-info b {
       color: var(--pastel-accent2);
@@ -400,8 +401,8 @@
       background: #fff;
       color: var(--pastel-text-main);
       margin-bottom: 0.1rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
     }
     .contact-form textarea { min-height: 90px; max-height: 220px; resize: vertical;}
     .contact-form button {
@@ -411,12 +412,12 @@
       border: none;
       background: var(--gradient2);
       color: var(--white);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1rem;
       cursor: pointer;
       margin-top: 0.2rem;
       transition: background 0.2s, color 0.2s;
-      font-family: 'Quicksand', Arial, sans-serif;
+      font-family: 'Nunito', Arial, sans-serif;
     }
     .contact-form button:hover {
       background: var(--gradient);
@@ -426,8 +427,8 @@
       color: var(--pastel-accent2);
       text-align: right;
       font-size: 0.98rem;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 800;
       margin-top: -0.6rem;
       margin-bottom: 0.6rem;
     }
