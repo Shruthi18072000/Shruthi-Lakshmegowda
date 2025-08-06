@@ -3,40 +3,38 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Shruthi Lakshmegowda | Finance & Analytics Portfolio</title>
+  <title>Shruthi Lakshmegowda | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --vibrant1: #6f00ff;
-      --vibrant2: #ff4c60;
-      --vibrant3: #fdc300;
-      --vibrant4: #00f9a6;
-      --bg: #1a0826;
-      --surface: #25113c;
-      --card: #2e1749;
-      --text-main: #fff;
-      --text-sub: #cbbaf6;
-      --shadow: 0 8px 32px 0 rgba(111,0,255,0.19);
-      --radius: 18px;
+      --pastel-bg: #ffe3ed;
+      --pastel-card: #fff6fa;
+      --pastel-accent: #f9a8c9;
+      --pastel-accent2: #b49fcc;
+      --pastel-accent3: #ffd6ec;
+      --pastel-accent4: #f7cfe6;
+      --pastel-text-main: #a14b6a;
+      --pastel-text-sub: #8e6185;
+      --white: #fff;
+      --radius: 20px;
+      --shadow: 0 8px 32px 0 rgba(241, 97, 158, 0.10);
+      --gradient: linear-gradient(135deg, #ffb6c1 0%, #ffd6ec 80%, #b49fcc 100%);
+      --gradient2: linear-gradient(90deg, #b49fcc, #f9a8c9 80%);
       --transition: 0.5s cubic-bezier(.16,.8,.42,1);
-      --gradient: linear-gradient(135deg, #ff4c60 0%, #6f00ff 45%, #fdc300 90%);
-      --gradient2: linear-gradient(135deg, #00f9a6, #ff4c60 80%);
     }
     html, body {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       font-family: 'Inter', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
+      background: var(--pastel-bg);
+      color: var(--pastel-text-main);
       min-height: 100vh;
       scroll-behavior: smooth;
     }
     /* Sidebar */
     .sidebar {
       width: 270px;
-      background: var(--surface);
-      background-image: var(--gradient);
-      background-size: 300% 300%; background-position: 0% 100%;
-      border-right: none;
+      background: var(--gradient);
       box-shadow: var(--shadow);
       position: fixed;
       top: 0; left: 0; bottom: 0;
@@ -57,7 +55,7 @@
       font-family: 'Montserrat', Arial, sans-serif;
       font-size: 2.3rem;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--pastel-accent);
       letter-spacing: 2px;
       margin-bottom: 2.2rem;
       text-decoration: none;
@@ -67,7 +65,7 @@
       -webkit-background-clip: text;
       color: transparent;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 14px #0003);
+      filter: drop-shadow(0 2px 14px #fff4);
     }
     .sidebar nav {
       width: 100%;
@@ -75,7 +73,7 @@
       margin-bottom: auto;
     }
     .sidebar nav a {
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       font-weight: 600;
       font-size: 1.08rem;
       text-decoration: none;
@@ -86,21 +84,21 @@
       display: flex; align-items: center;
     }
     .sidebar nav a.active, .sidebar nav a:hover {
-      background: rgba(255,255,255,0.12);
-      color: var(--vibrant3);
+      background: var(--pastel-accent3);
+      color: var(--pastel-accent);
     }
     .sidebar .social {
       margin-top: 2.5rem;
       display: flex; gap: 1.2rem;
     }
     .sidebar .social a {
-      color: var(--vibrant3);
-      font-size: 1.3rem;
+      color: var(--pastel-accent2);
+      font-size: 1.35rem;
       transition: color .18s;
       text-decoration: none;
-      filter: drop-shadow(0 2px 14px #0002);
+      filter: drop-shadow(0 2px 14px #fff2);
     }
-    .sidebar .social a:hover { color: var(--vibrant2);}
+    .sidebar .social a:hover { color: var(--pastel-accent);}
     /* Main */
     .main {
       margin-left: 270px;
@@ -110,7 +108,7 @@
     }
     @media (max-width: 950px) {
       .sidebar { width: 100vw; height: auto; position: static; flex-direction: row; align-items: center;
-        padding: 1.1rem 1rem; border-bottom: none; border-right: none; background-size: 400% 400%;}
+        padding: 1.1rem 1rem; background-size: 300% 300%;}
       .sidebar .logo { margin-bottom: 0; }
       .sidebar nav { flex-direction: row; gap: 0.7rem; margin: 0 0 0 2rem;}
       .sidebar .social { margin-top: 0; margin-left:auto;}
@@ -118,7 +116,7 @@
     }
     /* Hero */
     .hero {
-      min-height: 82vh;
+      min-height: 80vh;
       display: flex; flex-wrap: wrap; align-items: center;
       gap: 3.5rem;
       padding-top: 8vw;
@@ -133,41 +131,41 @@
       width: 200px; height: 200px;
       object-fit: cover;
       border-radius: 50%;
-      border: 7px solid var(--vibrant1);
-      box-shadow: 0 10px 60px 0 var(--vibrant1), 0 4px 48px 0 #0004;
-      background: var(--card);
+      border: 7px solid var(--pastel-accent2);
+      box-shadow: 0 10px 60px 0 #ffb6c122, 0 4px 48px 0 #fff4;
+      background: var(--pastel-card);
       transition: border .3s;
     }
-    .hero-img img:hover { border: 7px solid var(--vibrant2);}
-    .hero-info { flex: 1 1 420px; min-width: 260px;}
+    .hero-img img:hover { border: 7px solid var(--pastel-accent);}
+    .hero-info { flex: 1 1 410px; min-width: 260px;}
     .hero-title {
       font-family: 'Montserrat', Arial, sans-serif;
       font-size: 2.8rem;
       font-weight: 700;
       letter-spacing: 2px;
-      color: var(--vibrant3);
+      color: var(--pastel-accent2);
       margin-bottom: 0.4rem;
       background: var(--gradient2); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
     }
     .hero-headline {
       font-size: 1.19rem;
-      color: var(--vibrant4);
+      color: var(--pastel-accent);
       font-weight: 700;
       margin-bottom: 1.2rem;
       letter-spacing: 0.8px;
-      text-shadow: 0 2px 12px #0007;
+      text-shadow: 0 2px 12px #fff7;
     }
     .hero-bio {
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       font-size: 1.09rem;
       line-height: 1.8;
       margin-bottom: 1.35rem;
       max-width: 650px;
-      text-shadow: 0 2px 10px #0002;
+      text-shadow: 0 2px 10px #fff2;
     }
     .hero-btn {
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient2);
+      color: var(--white);
       border: none;
       border-radius: 30px;
       font-size: 1.13rem;
@@ -175,24 +173,24 @@
       padding: 1rem 2.7rem;
       cursor: pointer;
       margin-top: 1rem;
-      box-shadow: 0 6px 32px 0 #ff4c601a;
+      box-shadow: 0 6px 32px 0 #f9a8c91a;
       transition: background .18s, color .16s, transform .12s;
       letter-spacing: 0.04em;
     }
     .hero-btn:hover, .hero-btn:focus {
-      background: var(--gradient2);
-      color: var(--surface);
+      background: var(--gradient);
+      color: var(--pastel-accent2);
       transform: scale(1.04);
     }
     /* Section titles */
     .section-title {
       font-size: 1.38rem;
-      color: var(--vibrant2);
+      color: var(--pastel-accent);
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 700;
       margin: 3.1rem 0 2.1rem 0;
       letter-spacing: 1px;
-      background: var(--gradient2); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+      background: var(--gradient); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
     }
     /* Cards */
     .cards-grid {
@@ -202,26 +200,26 @@
       margin-bottom: 2.5rem;
     }
     .card {
-      background: var(--card);
+      background: var(--pastel-card);
       border-radius: var(--radius);
-      box-shadow: 0 4px 32px 0 #6f00ff22, var(--shadow);
+      box-shadow: var(--shadow);
       padding: 2.1rem 1.1rem 1.2rem 1.2rem;
       display: flex;
       flex-direction: column;
       min-height: 140px;
-      border-left: 5px solid var(--vibrant2);
+      border-left: 5px solid var(--pastel-accent);
       opacity: 0; transform: translateY(40px); transition: var(--transition);
     }
     .card.visible { opacity: 1; transform: none;}
     .card h3 {
       margin: 0 0 0.7rem 0;
-      color: var(--vibrant1);
+      color: var(--pastel-accent2);
       font-size: 1.13rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      text-shadow: 0 2px 8px #6f00ff24;
+      text-shadow: 0 2px 8px #f9a8c944;
     }
-    .card p { margin: 0; color: var(--text-sub);}
+    .card p { margin: 0; color: var(--pastel-text-sub);}
     /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
@@ -230,13 +228,13 @@
       margin-bottom: 2.5rem;
     }
     .portfolio-card {
-      background: var(--card);
+      background: var(--pastel-card);
       border-radius: var(--radius);
-      box-shadow: 0 4px 32px 0 #ff4c6012, var(--shadow);
+      box-shadow: var(--shadow);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      border-bottom: 4px solid var(--vibrant3);
+      border-bottom: 4px solid var(--pastel-accent);
       opacity: 0; transform: translateY(40px); transition: var(--transition);
       position: relative;
     }
@@ -245,7 +243,7 @@
       width: 100%;
       height: 150px;
       object-fit: cover;
-      background: #43005b;
+      background: var(--pastel-accent3);
       border-top-left-radius: var(--radius);
       border-top-right-radius: var(--radius);
     }
@@ -258,25 +256,25 @@
     }
     .portfolio-title {
       font-size: 1.09rem;
-      color: var(--vibrant1);
+      color: var(--pastel-accent2);
       font-weight: 700;
       margin-bottom: 0.3rem;
       letter-spacing: 0.01em;
     }
     .portfolio-desc {
       font-size: 0.98rem;
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       margin-bottom: 0.35rem;
     }
     .portfolio-tools {
       font-size: 0.93rem;
-      color: var(--vibrant3);
+      color: var(--pastel-accent);
       margin-top: auto;
     }
     .portfolio-badge {
       display: inline-block;
       background: var(--gradient2);
-      color: #1a0826;
+      color: var(--pastel-text-main);
       font-weight: 700;
       font-size: 0.93rem;
       padding: 0.25em 0.7em;
@@ -287,7 +285,7 @@
       text-decoration: none;
       transition: background .18s, color .18s;
     }
-    .portfolio-badge:hover { background: var(--gradient); color: #fff;}
+    .portfolio-badge:hover { background: var(--gradient); color: var(--white);}
     /* Stats */
     .stats-row {
       display: flex;
@@ -296,12 +294,12 @@
       flex-wrap: wrap;
     }
     .stat {
-      color: var(--vibrant4);
+      color: var(--pastel-accent2);
       font-size: 1.38rem;
       font-weight: 700;
     }
     .stat-label {
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       font-size: 1rem;
       font-weight: 500;
     }
@@ -313,15 +311,15 @@
       margin-bottom: 2.8rem;
     }
     .skill-card {
-      background: var(--card);
+      background: var(--pastel-card);
       border-radius: var(--radius);
-      box-shadow: 0 4px 32px 0 #00f9a624, var(--shadow);
+      box-shadow: var(--shadow);
       padding: 1.3rem 1rem;
       opacity: 0; transform: translateY(40px); transition: var(--transition);
     }
     .skill-card.visible { opacity: 1; transform: none;}
     .skill-card h4 {
-      color: var(--vibrant4);
+      color: var(--pastel-accent);
       font-size: 1.04rem;
       margin-bottom: 0.45rem;
       font-weight: 700;
@@ -331,7 +329,7 @@
     }
     .skill-card li {
       font-size: 0.98rem;
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       margin-bottom: 0.3rem;
     }
     /* Contact */
@@ -345,15 +343,15 @@
     .contact-info {
       flex: 1 1 200px;
       min-width: 160px;
-      color: var(--text-sub);
+      color: var(--pastel-text-sub);
       font-size: 1.03rem;
     }
     .contact-info b {
-      color: var(--vibrant3);
+      color: var(--pastel-accent2);
     }
     .contact-form {
       flex: 1 1 320px; min-width: 220px;
-      background: var(--card);
+      background: var(--pastel-card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 1.7rem 1.2rem;
@@ -368,10 +366,10 @@
       width: 100%;
       padding: 0.8rem 0.7rem;
       border-radius: 6px;
-      border: 1px solid #a670f6;
+      border: 1px solid var(--pastel-accent2);
       font-size: 1rem;
       background: #fff;
-      color: #31044c;
+      color: var(--pastel-text-main);
       margin-bottom: 0.1rem;
     }
     .contact-form textarea { min-height: 90px; max-height: 220px; resize: vertical;}
@@ -380,8 +378,8 @@
       padding: 0.65rem 1.7rem;
       border-radius: 30px;
       border: none;
-      background: var(--gradient);
-      color: #fff;
+      background: var(--gradient2);
+      color: var(--white);
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
@@ -389,11 +387,11 @@
       transition: background 0.2s, color 0.2s;
     }
     .contact-form button:hover {
-      background: var(--gradient2);
-      color: var(--surface);
+      background: var(--gradient);
+      color: var(--pastel-accent2);
     }
     .form-success {
-      color: var(--vibrant3);
+      color: var(--pastel-accent2);
       text-align: right;
       font-size: 0.98rem;
       margin-top: -0.6rem;
@@ -430,10 +428,10 @@
     </nav>
     <div class="social">
       <a href="https://www.linkedin.com/in/shruthilakshmegowda" title="LinkedIn" target="_blank">
-        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#fefefe"/><path d="M16 19h4v14h-4V19zm2-2a2 2 0 110-4 2 2 0 010 4zm6 2h4v2h.06c.55-1.04 1.9-2.14 3.94-2.14C34.42 17 36 18.62 36 21.57V33h-4V22.65c0-2.03-.74-3.04-2.29-3.04-1.23 0-1.96.83-2.29 1.61-.12.28-.15.67-.15 1.06V33h-4V19z" fill="#fdc300"/></svg>
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#fff6fa"/><path d="M16 19h4v14h-4V19zm2-2a2 2 0 110-4 2 2 0 010 4zm6 2h4v2h.06c.55-1.04 1.9-2.14 3.94-2.14C34.42 17 36 18.62 36 21.57V33h-4V22.65c0-2.03-.74-3.04-2.29-3.04-1.23 0-1.96.83-2.29 1.61-.12.28-.15.67-.15 1.06V33h-4V19z" fill="#b49fcc"/></svg>
       </a>
       <a href="mailto:shruthigowda5646@gmail.com" title="Email">
-        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#fefefe"/><path d="M12 16h24v16H12V16zm2 2v12h20V18l-10 7-10-7z" fill="#ff4c60"/></svg>
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#fff6fa"/><path d="M12 16h24v16H12V16zm2 2v12h20V18l-10 7-10-7z" fill="#f9a8c9"/></svg>
       </a>
     </div>
   </aside>
@@ -492,7 +490,7 @@
         </div>
       </div>
       <div class="portfolio-card">
-        <img src="https://seeklogo.com/images/S/snowflake-logo-CE20F6A9FB-seeklogo.com.png" alt="Snowflake Badge" class="portfolio-thumb" style="background:#fff;object-fit:contain;">
+        <img src="https://seeklogo.com/images/S/snowflake-logo-CE20F6A9FB-seeklogo.com.png" alt="Snowflake Badge" class="portfolio-thumb" style="background:#fff6fa;object-fit:contain;">
         <div class="portfolio-content">
           <a href="https://achieve.snowflake.com/b44b15f7-9244-4f99-9d3f-07f64ba50293#acc.hQFG6g2d" class="portfolio-badge" target="_blank">Snowflake: Data Fundamentals Accreditation</a>
           <div class="portfolio-title">Snowflake Data Fundamentals Accreditation (2025)</div>
